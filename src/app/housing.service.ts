@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HousingLocation } from './housing-location';
+import { last } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -109,6 +110,8 @@ export class HousingService {
     },
 
   ];
+  
+  constructor() { }
 
   getAllHousingLocations() : HousingLocation[] {
     return this.housingLocationList;
@@ -120,5 +123,8 @@ export class HousingService {
       housingLocation.id === id);
   }
 
-  constructor() { }
+
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(firstName, lastName, email);
+  }
 }
